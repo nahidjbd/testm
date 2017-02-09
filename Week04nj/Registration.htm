@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+</head>
+<body>
+    Please fill in the following form:<br />
+    <br />
+    <form action="custact.aspx" method="post" name="frmCustomer" onclick="return doSave();">
+    <table>
+        <tr>
+            <td style="width: 82px">
+    First Name:</td>
+            <td>
+    <input id="Text1" type="text" name="txtFName" />
+            </td>
+            
+        </tr>
+        <tr>
+            <td style="width: 82px">
+    Last Name:
+            </td>
+            <td>
+    <input id="Text2" type="text" name="txtLName" /></td>
+            
+        </tr>
+        <tr>
+            <td style="width: 82px">
+    Password:
+            </td>
+            <td>
+    <input id="Password1" type="password" /></td>
+            
+        </tr>
+        <tr>
+            <td style="width: 82px">
+    Confirm:
+            </td>
+            <td>
+    <input id="Password2" type="password" /></td>
+            
+        </tr>
+        <tr>
+            <td style="width: 82px">
+    Email:&nbsp;</td>
+            <td>
+    <input id="Text3" type="text" name="txtEmail" /></td>
+            
+        </tr>
+        <tr>
+            <td style="width: 82px">
+    <input id="Submit1" type="submit" value="submit" /></td>
+            <td>
+    <input id="Reset1" type="reset" value="reset" /></td>
+            
+        </tr>
+    </table>
+    </form>
+    <br />
+    <br />
+    &nbsp;
+<script Language="JavaScript">
+<!--
+
+  function ltrim(varIn)
+   {/*Purpose: Trims the leading spaces from a string*/
+   var varOut = "" 
+   
+    if(!varIn)
+     {
+      // string is null, so nothing to do
+     }
+    else // string has at least one character
+     {
+      for(intI=0; intI < varIn.length; intI++)
+       {
+        if(varIn.charAt(intI) != " ")
+         {
+          //first non-space char found so return
+          //string from this character forward
+          varOut = varIn.substring(intI)
+          break
+         }
+       }
+     }
+     return varOut
+   }
+   
+  function doSave()
+   {
+    var fOk = true
+    var strMsg
+    var ctlFName = document.frmCustomer.txtFName
+    var ctlLName = document.frmCustomer.txtLName
+    var ctlEMail = document.frmCustomer.txtEmail
+
+    if((ltrim(ctlFName.value)).length==0)
+     {
+      fOk = false     
+      strMsg = "First Name is a required field."
+      ctlFName.focus()
+     }
+    else
+     {
+      if((ltrim(ctlLName.value)).length==0)
+       {
+        fOk = false     
+        strMsg = "Last Name is a required field."
+        ctlLName.focus()
+       }
+      else
+       {
+        if((ltrim(ctlEMail.value)).length==0)
+         {
+          fOk = false     
+          strMsg = "E-mail Address is a required field."
+          ctlEMail.focus()
+         }
+        else
+         {
+          if(ctlEMail.value.indexOf("@")==-1
+           || ctlEMail.value.indexOf(".")==-1) 
+           {
+            fOk = false     
+            strMsg = "The entered e-mail address is not " +
+             "valid.\nE-mail addresses must " +
+             "be in the form name@domain."
+            ctlEMail.focus()
+           }
+         }
+       }
+     }
+
+    // If no errors, then submit the form
+    if(fOk) 
+     {
+      return true
+     }
+    else
+     {
+      alert(strMsg)
+      return false
+     }
+  }
+//-->
+		</script>
+</body>
+</html>

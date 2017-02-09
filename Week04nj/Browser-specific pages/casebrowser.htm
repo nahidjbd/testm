@@ -1,0 +1,37 @@
+<html><head>
+<title>Check browser</title>
+ 
+<script>
+function checkbrowser(){
+ 	var bn;
+ 	bn = window.navigator.appName;
+	if(bn== "Netscape"){
+		window.location.href = "NN.htm";
+	}
+	else{
+		window.location.href = "IE.htm";
+	}
+}
+ </script>
+</head>
+
+<body onload="checkbrowser()" ; bgcolor="#FF6666" text="#CCFF99">
+
+<table border="0" width="750" cellspacing="0" cellpadding="6">
+  <tr>
+    <td width="100%">
+      <h1 align="center">Crane Computers</h1>
+      <h1 align="center"><img border="0" src="computer.gif" width="100" height="77"></h1>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%">
+      <h2 align="center">Checking Browser Version</h2>
+    </td>
+  </tr>
+</table>
+<h1>&nbsp;</h1>
+
+</body>
+
+</html>

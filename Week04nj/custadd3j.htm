@@ -1,0 +1,137 @@
+<html>
+	<head>
+		<title>The ToysRUs Corporation (custadd3j.htm)</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body>
+		<img alt="logo" src="logo.gif" align="left" WIDTH="409" HEIGHT="75">
+		<h1>&nbsp;</h1>
+		<h1>&nbsp;</h1>
+		<h2 class="title">The ToysRUs Corporation</h2>
+		<br clear="all">
+		<h3>New Customer Form</h3>
+		<h3><p>
+				<form name="frmCustomer" action="custact.aspx" method="post">
+					<table>
+						<tr>
+							<td class="label"><b>First Name:</b></td>
+							<td><input type="text" name="txtFName" size="30"></td>
+						</tr>
+						<tr>
+							<td class="label"><b>Last Name:</b></td>
+							<td><input type="text" name="txtLName" size="30"></td>
+						</tr>
+						<tr>
+							<td class="label"><b>Address:</b></td>
+							<td><input type="text" name="txtAddress" size="30"></td>
+						</tr>
+						<tr>
+							<td class="label"><b>City:</b></td>
+							<td><input type="text" name="txtCity" size="20"></td>
+						</tr>
+						<tr>
+							<td class="label"><b>State:</b></td>
+							<td><input type="text" name="txtState" size="5"></td>
+						</tr>
+						<tr>
+							<td class="label"><b>ZipCode:</b></td>
+							<td><input type="text" name="txtZipCode" size="20"></td>
+						</tr>
+						<tr>
+							<td class="label"><b>E-mail Address:</b></td>
+							<td><input type="text" name="txtEmail" size="30"></td>
+						</tr>
+						<tr>
+							<td><input type="submit" name="Save" value="Save Record" onClick="return doSave()"></td>
+							<td><input type="reset" name="Reset" value="Reset"></td>
+						</tr>
+					</table>
+				</form>
+		</h3>
+		<script type="text/javascript" language="JavaScript">
+<!--
+
+  function ltrim(varIn)
+   {/*Purpose: Trims the leading spaces from a string*/
+   var varOut = "" 
+   
+    if(!varIn)
+     {
+      // string is null, so nothing to do
+     }
+    else // string has at least one character
+     {
+      for(intI=0; intI < varIn.length; intI++)
+       {
+        if(varIn.charAt(intI) != " ")
+         {
+          //first non-space char found so return
+          //string from this character forward
+          varOut = varIn.substring(intI)
+          break
+         }
+       }
+     }
+     return varOut
+   }
+   
+  function doSave()
+   {
+    var fOk = true
+    var strMsg
+    var ctlFName = document.frmCustomer.txtFName
+    var ctlLName = document.frmCustomer.txtLName
+    var ctlEMail = document.frmCustomer.txtEmail
+
+    if((ltrim(ctlFName.value)).length==0)
+     {
+      fOk = false     
+      strMsg = "First Name is a required field."
+      ctlFName.focus()
+     }
+    else
+     {
+      if((ltrim(ctlLName.value)).length==0)
+       {
+        fOk = false     
+        strMsg = "Last Name is a required field."
+        ctlLName.focus()
+       }
+      else
+       {
+        if((ltrim(ctlEMail.value)).length==0)
+         {
+          fOk = false     
+          strMsg = "E-mail Address is a required field."
+          ctlEMail.focus()
+         }
+        else
+         {
+          if(ctlEMail.value.indexOf("@")==-1
+           || ctlEMail.value.indexOf(".")==-1) 
+           {
+            fOk = false     
+            strMsg = "The entered e-mail address is not " +
+             "valid.\nE-mail addresses must " +
+             "be in the form name@domain."
+            ctlEMail.focus()
+           }
+         }
+       }
+     }
+
+    // If no errors, then submit the form
+    if(fOk) 
+     {
+      return true
+     }
+    else
+     {
+      alert(strMsg)
+      return false
+     }
+  }
+//-->
+		</script>
+	</body>
+</html>

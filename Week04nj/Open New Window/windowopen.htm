@@ -1,0 +1,30 @@
+<html><head>
+<title>Office Supply Unlimited</title>
+</head>
+<script language = "javascript">
+function openWin(){
+var newW = window.open("office.htm","newWin", "height = 250, width = 400, status = no, toolbar = no, menubar = no, location = no");
+var strH ;
+strH = "<html><head><title>";
+strH = strH + "Office Supply Unlimited</title>";
+strH = strH + "<h1>";
+strH = strH + "Office Supply Unlimited";
+strH = strH + "</h1>";
+strH = strH + "<center>";
+strH = strH + "Call us for customer support";
+strH = strH + "at 1-800-555-5555 ";
+strH = strH + "<BR>";
+strH = strH + "<BR>between 9:00 - 5:00 CST. ";
+strH = strH + "</center>";
+strH = strH + "<form><input type = 'button' ";
+strH = strH + "value='Close me' onClick='window.close()'>";
+strH = strH + "</form></body></html>";
+newW.document.write(strH);
+}
+</script> 
+<body>
+<form><h1>Call Customer Support</h1>
+<input type = "button" 
+value = "Click Here for Customer Support" 
+onClick = "openWin()"> 
+</form></body></html>

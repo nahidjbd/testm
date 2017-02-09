@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>Shark Photo</title>
+		<script LANGUAGE="javascript">
+<!--
+function doFilter() {
+	var strFilter = ""
+	if (document.frmEffects.FlipH.checked) 
+		strFilter = strFilter + "FlipH() ";
+	if (document.frmEffects.FlipV.checked) 
+		strFilter = strFilter + "FlipV() ";
+	if (document.frmEffects.Gray.checked)
+		strFilter = strFilter + "Gray() "
+	if (document.frmEffects.Xray.checked)
+		strFilter = strFilter + "Xray() "
+	if (document.frmEffects.Invert.checked)
+		strFilter = strFilter + "Invert() "
+	if (document.frmEffects.Blur.checked)
+		strFilter = strFilter + "Blur(add=0,direction=90,strength=10) "; 
+	if (document.frmEffects.Wave.checked)
+		strFilter = strFilter +  
+		 "wave(add=0,Freq=1,lightStrength=50,Phase=0,Strength=6) ";
+	if (document.frmEffects.DropShadow.checked)
+		strFilter = strFilter +  
+		 "dropshadow(color=olive,offX=5,offY=5) ";
+	photo.style.filter = strFilter
+	head1.style.filter = strFilter
+	
+	}
+//-->
+		</script>
+	</head>
+	<body background="sand.gif">
+		<img id="photo" SRC="greatwhite.jpg" align="left" WIDTH="306" HEIGHT="215">
+		<div id="head1" style="WIDTH:20%"><h1>Great White Shark</h1>
+		</div>
+		<br clear="all">
+		<form name="frmEffects">
+			<P>
+				<input type="checkbox" name="FlipH">FlipH<br>
+				<input type="checkbox" name="FlipV">FlipV<br>
+				<input type="checkbox" name="Blur">Blur<br>
+				<input type="checkbox" name="Gray">Gray<br>
+				<input type="checkbox" name="Xray">Xray<br>
+				<input type="checkbox" name="Invert">Invert<br>
+				<input type="checkbox" name="Wave">Wave<br>
+				<input type="checkbox" name="DropShadow">DropShadow<BR>
+				<BR>
+			</P>
+			<P>&nbsp;</P>
+			<p>
+				<input type="button" value="Apply Filter" onClick="doFilter()">
+		</form>
+		
+		</P>
+	</body>
+</html>

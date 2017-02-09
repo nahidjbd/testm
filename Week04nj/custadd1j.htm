@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>The ToysRUs Corporation (custadd1j.htm)</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+<body>
+<img alt="" src="logo.gif" align="left" >
+<h2 style="title">The ToysRUs Corporation</h2>
+<br>
+<br clear="all">
+<h3>New Customer Form</h3>
+
+<form name="frmCustomer" action="custact.aspx">
+<table>
+<tr>
+  <td class="label"><b>First Name:</b></td>
+  <td><input type="text" name="txtFName" size="30"></td>
+</tr>
+<tr>
+    <td class="label"><b>Last Name:</b></td>
+  <td><input type="text" name="txtLName" size="30"></td>
+</tr>
+<tr>
+  <td class="label"><b>Address:</b></td>
+  <td><input type="text" name="txtAddress" size="30"></td>
+</tr>
+<tr>
+  <td class="label"><b>City:</b></td>
+  <td><input type="text" name="txtCity" size="20"></td>
+</tr>
+<tr>
+  <td class="label"><b>State:</b></td>
+  <td><input type="text" name="txtState" size="5"></td>
+</tr>
+<tr>
+  <td class="label"><b>ZipCode:</b></td>
+  <td><input type="text" name="txtZipCode" size="20"></td>
+</tr>
+<tr>
+  <td class="label"><b>E-mail Address:</b></td>
+  <td><input type="text" name="txtEmail" size="30"></td>
+</tr>
+<tr>
+  <td><input type="button" name="Save" value="Save Record" onClick="doSave()"></td>
+  <td><input type="reset" name="Reset" value="Reset"></td>
+</tr>
+</table>
+</form>
+
+
+<script type="text/javascript" Language="JavaScript">
+<!--
+
+  function ltrim(varIn)
+   {/*Purpose: Trims the leading spaces from a string*/
+   var varOut = ""
+
+    if(!varIn)
+     {
+      // string is null, so nothing to do
+     }
+    else // string has at least one character
+     {
+      for(intI=0; intI < varIn.length; intI++)
+       {
+        if(varIn.charAt(intI) != " ")
+         {
+          //first non-space char found so return
+          //string from this character forward
+          varOut = varIn.substring(intI)
+          break
+         }
+       }
+     }
+     return varOut
+   }
+
+  function doSave()
+   {
+    var fOk = true
+    var strMsg
+
+    if((ltrim(document.frmCustomer.txtFName.value)).length==0)
+     {
+      fOk = false
+      strMsg = "First Name is a required field."
+      document.frmCustomer.txtFName.focus()
+     }
+    else
+     {
+      if((ltrim(document.frmCustomer.txtLName.value)).length==0)
+       {
+        fOk = false
+        strMsg = "Last Name is a required field."
+        document.frmCustomer.txtLName.focus()
+       }
+      else
+       {
+        if((ltrim(document.frmCustomer.txtEmail.value)).length==0)
+         {
+          fOk = false
+          strMsg = "E-mail Address is a required field."
+          document.frmCustomer.txtEmail.focus()
+         }
+        else
+         {
+          if(document.frmCustomer.txtEmail.value.
+           indexOf("@")==-1
+           ||
+           document.frmCustomer.txtEmail.value.
+           indexOf(".")==-1)
+           {
+            fOk = false
+            strMsg = "The entered e-mail address is " +
+             "not valid.\nE-mail addresses must " +
+             "be in the form name@domain."
+            document.frmCustomer.txtEmail.focus()
+           }
+         }
+       }
+     }
+
+    // If no errors, then submit the form
+    if (fOk)
+     document.frmCustomer.submit();
+    else
+      alert(strMsg);
+  }
+//-->
+</script>
+</body>
+</html>

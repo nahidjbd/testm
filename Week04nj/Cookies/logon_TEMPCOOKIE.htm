@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Northwoods University Student Registration System</title>
+<meta name="GENERATOR" content="Microsoft Visual Studio.NET 7.0">
+<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+<script language="javascript">
+	<!--
+		function createCookie() {
+			document.cookie = "userID=" + document.frmLogin.txtUserid.value;
+			document.cookie = "userPIN=" + document.frmLogin.txtPIN.value;
+			alert("Cookie value is:" + "\n" + document.cookie); 
+		}
+	//-->
+</script>
+
+</head>
+<body>
+	<p align="center">
+		<img src="nwlogo.jpg" width=240 height=120>
+	</P>
+	<p align="center">
+	<form name=frmLogin action="ignore" onsubmit="createCookie()">
+	<table width="70%">
+		<tr>
+		<td width="50%" align="RIGHT">User ID:</td>
+		<td width="50%" align="LEFT"><input type="TEXT" name="txtUserid" size="20" 
+		maxlength="8"></td>
+		</tr>
+		<tr>
+		<td align="RIGHT">PIN:</td>
+		<td align="LEFT"><input type="PASSWORD" name="txtPIN" size="20" maxlength="8"></td></tr>
+		<tr><td align="RIGHT">Date of Birth:</td>
+		<td align="LEFT"><input type="text" name="txtDOB" size="40" maxlength="40"></td>
+		<td>(MM/DD/YYYY)</td>
+		</tr>
+		<tr>
+		<td></td><td align="LEFT"><input type="submit" NAME="cmdSubmit"></td>
+		</tr>
+	</table>
+	</form>
+	</p>
+</body>
+</html>
